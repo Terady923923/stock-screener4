@@ -566,7 +566,8 @@ if debug:
     with st.expander("デバッグ：除外理由サマリー", expanded=True):
         if exclude_reasons:
             ex = pd.DataFrame(exclude_reasons)
-            st.dataframe(ex["reason"].value_counts().reset_index().rename(columns={"index": "reason", "reason": "count"}), use_container_width=True)
+            summary_df = ex["reason"].value_counts().rename_axis("reason").reset_index(name="count")
+            st.dataframe(summary_df, use_container_width=True)
             st.write("除外理由の例")
             st.dataframe(ex.head(200), use_container_width=True)
         else:
