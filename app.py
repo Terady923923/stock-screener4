@@ -442,6 +442,8 @@ with st.sidebar:
     debug = st.checkbox("デバッグ表示", value=True)
 
     run = st.button("🔍 スクリーニング実行", type="primary")
+    if run:
+    st.session_state["has_run"] = True
 
 
 opts = {
