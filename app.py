@@ -443,7 +443,7 @@ with st.sidebar:
 
     run = st.button("🔍 スクリーニング実行", type="primary")
     if run:
-    st.session_state["has_run"] = True
+        st.session_state["has_run"] = True
 
 
 opts = {
