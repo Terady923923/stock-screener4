@@ -474,10 +474,13 @@ opts = {
 }
 
 
-if not run:
+if "has_run" not in st.session_state:
+    st.session_state["has_run"] = False
+if not st.session_state["has_run"]:
     st.write("左の条件を設定して **スクリーニング実行** を押してください。")
     st.write("まず動作確認するなら、左の「テスト用：個別コード指定」に `7203,8035,9984` を入れて実行してください。")
     st.stop()
+    
 
 
 # 対象銘柄作成
